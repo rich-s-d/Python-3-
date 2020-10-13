@@ -2,6 +2,15 @@
 
 ## File and Paths
 ```py
+from pathlib import Path
+
+data_folder = Path("source_data/text_files/")
+
+file_to_open = data_folder / "raw_data.txt" # If you want to add on to the path, you can use the / operator directly in your code.
+
+print(file_to_open.read_text())
+
+
 if not filename.exists():
     print("Oops, file doesn't exist!")
 else:
