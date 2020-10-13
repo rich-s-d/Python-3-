@@ -1,5 +1,10 @@
 # Python-3-
 
+## Pandas and Geopandas
+### Functions
+```py
+df.apply() #Functions
+```
 ## File and Paths
 ```py
 from pathlib import Path
