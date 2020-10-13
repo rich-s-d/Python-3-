@@ -22,3 +22,12 @@ from pathlib import Path
 
 filename = Path("source_data/text_files/raw_data.txt")
 ```
+Here’s an example that will open a local file in your web browser with just two lines a code:
+```py
+from pathlib import Path
+import webbrowser
+
+filename = Path("source_data/text_files/raw_data.txt")
+
+webbrowser.open(filename.absolute().as_uri())
+```
