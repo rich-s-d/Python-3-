@@ -16,7 +16,7 @@ if not filename.exists():
 else:
     print("Yay, the file exists!")
 ```
-To make paths compatible in all operating systems, ie., /\, use:
+To make paths compatible in all operating systems (windows uses the opposite slash to everythin else) use:
 ```py
 from pathlib import Path
 
