@@ -31,3 +31,9 @@ filename = Path("source_data/text_files/raw_data.txt")
 
 webbrowser.open(filename.absolute().as_uri())
 ```
+```py
+from pathlib import Path
+
+file_name = Path(file_path).name  # myfile.png
+file_stem = Path(file_path).stem  # myfile
+```
