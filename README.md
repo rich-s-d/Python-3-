@@ -52,7 +52,6 @@ for line in story:
 story.close()
 story_words
 ```
-
 ## Pandas and Geopandas
 ### Functions
 ```py
