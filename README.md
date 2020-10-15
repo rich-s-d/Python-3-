@@ -52,6 +52,15 @@ for line in story:
 story.close()
 story_words
 ```
+## Modularity
+### __name__
+Python set the value of dunder name differently depending on how the module is being used (importing or executing). Use the following under the function in the .py file.
+```py
+if __name__ == '__main__':
+    fetch_words()
+```
+It is best practice to define a module (a .py file) with this so it can be imported to the Python REPL without running immediately, as __name__ == '__name__' in REPL. Imported to a text editor __name__ == '__main__'.
+
 ## Pandas and Geopandas
 ### Functions
 ```py
