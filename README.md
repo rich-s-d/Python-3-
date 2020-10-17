@@ -125,7 +125,45 @@ def show_count()
 By using global count, when setting the count with set_count, the global count, i.e., count = 0 will change.
 ### Everything is an object
 This can be seen by using the type() function on anything.
-## 
+## Built in Collections
+### Tuples
+Immutable. 
+```py
+t = (67, 'this is a tuple', 2)
+
+t1 = (('this is a nested tuple', 16), (67, 'this is a tuple', 2))
+t[1][2] # This indexing returns 2
+
+t = (341,) # To create a single entry tuple you must set a comma.
+t = () # Although, this is how to make an empty tuple (no comma).
+
+t = 1,2,3,4,5,6 # Returns a tuple (1,2,3,4,5,6), ie., brackets can be omitted.
+
+def minmax(items)
+    return min(items), max(items) # Returns (min, max) in a tuple.
+```
+#### Tuple Unpacking!
+```py
+lower, upper = minmax([34, 45, 12, 56, 78]) # lower returns 12, upper returns 78
+
+(a, (b, (c,d))) = (4, (3, (2,1))) # a returns 4, b returns 3 etc.
+```
+#### Tuple Swapping
+```py
+a = 'jelly'
+b = 'bean'
+a, b = b, a # a returns 'bean', b 'jelly'
+```
+#### Create Tuple
+```py
+tuple('Shane') # Returns ('S','h','a','n','e')
+```
+#### in not in
+```py
+5 in (3,4,5,6,7) # Returns True
+5 not in (3,4,5,6,7) # Returns False
+```
+### Strings
 
 
 ## Pandas and Geopandas
