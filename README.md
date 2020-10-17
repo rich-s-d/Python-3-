@@ -1,8 +1,7 @@
 # Python 3
 
-# Table of Contents
--[Control Flow]
-
+* Table of contents
+[[_TOC_]]
 
 ## Control Flow
 ### While Loops
