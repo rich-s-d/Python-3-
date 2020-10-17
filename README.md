@@ -164,7 +164,20 @@ tuple('Shane') # Returns ('S','h','a','n','e')
 5 not in (3,4,5,6,7) # Returns False
 ```
 ### Strings
+```py
+'new' + 'found' + 'land' # Returns 'newfoundland'
+# Better to use join() on extensive concatenation as + methods creates lots of temporaries.
 
+#join() can also:
+
+colors = ';'.join(['#45ff23', '#2321fa']) # Returns '#45ff23 ; #2321fa'
+name = ' '.join(['Shane', 'Daniel', 'Rich']) # Returns 'Shane Daniel Rich'
+```
+##### Partition
+```py
+'unforgetable'.partition('forget') # Returns ('un', 'forget', 'able')
+# Is often used with unpacking
+departure, seperator, arrival = 'London:Edinburgh'.partition(':') # departure returns 'London', etc.
 
 ## Pandas and Geopandas
 ### Functions
