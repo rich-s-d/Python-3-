@@ -60,7 +60,71 @@ if __name__ == '__main__':
     fetch_words()
 ```
 It is best practice to define a module (a .py file) with this so it can be imported to the Python REPL without running immediately, as __name__ == '__name__' in REPL. Imported to a text editor __name__ == '__main__'.
+## Objects and Types
+1. Python uses dynamic typing, ie., you dont have to declare the type.
+2. Pythin uses strong typing, ie., types are not coerced to match.
+3. dir() will give a list of object attributes.
+4. __name__ is the name of the object.
+5. __doc__ is the doc string of the object.
+6. Strings have a repitition operation, *. String * integer will return copies of the string.
 
+To see if objects are equivalent, ie., have the same value:
+```py
+a == b
+```
+To see if objects have the same reference, ie., name tag, use:
+```py
+a is b
+```
+### Function Arguments and Defaults
+Args with defaults must be list after args without defaults.
+```py
+def banner(message, border='-') # Border has a default set.
+    line = border * len(message)
+    print(line)
+    print(message)
+    print(line)
+    
+>>>banner('Norwegian Blue')
+>>>--------------
+   Norwegian Blue
+   --------------
+```
+Positional arguments can be placed in the defined order without specifing a key. Alternatively, referring to above, one could call banner(border='*', message = 'New Zealand'). Keys must be placed AFTER any positional arguments.
+#### Mutable Default Values
+Default values are only called once, so a default list that has values added to it will inherit these when using the function again. Solution: only use IMMUTABLE default values! ..Such as integers and strings. Use None in place of a list if suitable:
+```py
+def add_spam(menu=None)
+    if menu = None:
+        menu = []
+        menu.append('spam')
+        return menu
+```
+### Type Systems
+```py 
+def add(a, b):
+    return a + b
+```
+This will return a + b regardless of type, but will not add different types.
+### Scopes
+Names are looked up in the narrowest relevant context: The LEGB rule
+1. Local
+2. Enclosing
+3. Global
+4. Built in
+
+Rebinding global names:
+```py
+count = 0
+def set_count(c):
+    global count
+    count = c
+def show_count()
+    print(count)
+```
+By using global count, when setting the count with set_count, the global count, i.e., count = 0 will change.
+### Everything is an object
+This can be seen by using the type() function on anything.
 ## Pandas and Geopandas
 ### Functions
 ```py
