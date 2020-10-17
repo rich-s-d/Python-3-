@@ -125,6 +125,9 @@ def show_count()
 By using global count, when setting the count with set_count, the global count, i.e., count = 0 will change.
 ### Everything is an object
 This can be seen by using the type() function on anything.
+## 
+
+
 ## Pandas and Geopandas
 ### Functions
 ```py
