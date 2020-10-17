@@ -193,7 +193,23 @@ f'Math constants: pi={m.pi:.3f}, e={m.e:.3f}'
 value = 4 * 20
 f'The value is {value}.'
 ```
-### Range
+### range() and enumerate()
+```py
+for i in range(5):
+range(5) # Retruns range(0,5), ie., type range.
+list(range(0, 10, 2)) # Returns a list with a 2 step, [0,2,4,6,8]
+
+# Enumerate places the values in tuples with the index.
+t = [2, 3, 6, 76]
+for i, v in enumerate(t): # Unpacking with enumerate.
+    print(f'i = {i}, v = {v}')
+```
+### Lists
+#### Negative indices
+Ie., list[-1] or list[-2] will refer to the last and seconds last item in the list.
+#### Slicing
+A list[start:stop]
+
 
 ## Pandas and Geopandas
 ### Functions
