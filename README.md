@@ -178,6 +178,22 @@ name = ' '.join(['Shane', 'Daniel', 'Rich']) # Returns 'Shane Daniel Rich'
 'unforgetable'.partition('forget') # Returns ('un', 'forget', 'able')
 # Is often used with unpacking
 departure, seperator, arrival = 'London:Edinburgh'.partition(':') # departure returns 'London', etc.
+departure, _, arrival = 'London:Edinburgh'.partition(':') # Convention is to use _ for unused or dummy values, some Pythons programs with look for these underscores.
+```
+##### format() and f strings
+In f strings f is placed at before the start of the string.
+```py
+'The age of {0} is {1}. {0} is a {occ[0]}'.format('Jim', 24, occ=('pilot', 'banker'))
+
+import math
+'Math constants: pi={m.pi:.3f}, e={m.e:.3f}'.format(m=math) # Three decimal places :.3f
+
+f'Math constants: pi={m.pi:.3f}, e={m.e:.3f}'
+
+value = 4 * 20
+f'The value is {value}.'
+```
+### Range
 
 ## Pandas and Geopandas
 ### Functions
