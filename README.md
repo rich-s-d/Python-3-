@@ -207,9 +207,55 @@ for i, v in enumerate(t): # Unpacking with enumerate.
 ### Lists
 #### Negative indices
 Ie., list[-1] or list[-2] will refer to the last and seconds last item in the list.
-#### Slicing
-A list[start:stop]
+#### Slicing and Soft Copying
+```py
+a_list[start:stop]
+list = [1,2,3,5]
+print(list[2:]) # Returns [3,5]
+# The below are soft copies, in that they create a copy of the references but the items mutated, for example with an append(). Rebinding, ie replacing the list will stop this. 
+list2 = list[:] # Where list is list2 is False but where list == list2, BUT, items are updated in both.
+list2 = list.copy() # A more readable way to copy.
+list2 = list(list) # Best way to copy, as any iterable series as a source can be passed, not just lists.
+# See below:
+list2 = [[9,8,7],[1,2,3]]
+list5 = list2[:]
+list5[1] = [99,88,77] # This rebinds and creates a new object in [1] that is not the same as list2.
+list2[1].append(1000) # 1000 will therefore only be appended to list2[1]
+list5[0].append(2000) # The object at [0] is still the same object in both lists, so an append of 2000 will appear in both lists.
+print(list2)
+print(list5)
+```
+#### index()
+```py
+w = 'the fox jumped over the dog'.split() # Returns a list of words split by a comma.
+i = w.index('fox') # Searching through list for a match and returns index.
+print(i)
+w.count('the') # Returns 2
+```
+#### delete, del or remove() and insert(), extend()
+```py
+del list[0]
+list.remove('fox')
 
+list.insert(2, 'sheep') # Insert 'sheep' at index 2.
+list.extent(['duck', 'bird']) # Adds these two items to the end of the list.
+```
+#### Rearranging a list, reverse(), sort() and sort(key=)
+Reverse is self explanatory.
+```py
+list.sort(reverse=True) # Decending order. 
+list.sort() # Default is acending order.
+list.sort(key=len) # Sorts by length.
+```
+#### sorted() and reversed() 
+1. They have the advantage of working on any finite iterable source object (ie., not just lists). 
+2. sorted() create a new list object that is sorted, wheras reversed creates a list_reverseiterator object that can be converted to a list using the list() function.
+```py
+list = [1,2,6,8]
+list2 = reversed(list) # Creates a list_reverseiterator object.
+list(list2) # Create list and return [8,6,2,1]
+```
+### Dictionaries
 
 ## Pandas and Geopandas
 ### Functions
