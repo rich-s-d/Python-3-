@@ -41,7 +41,7 @@ Dictionaries map keys to value
 d = {'daniel':37,'maike':29}
 d['daniel'] #Returns 37
 d['maike']=30 #Updates the value to 30 from 29
-
+```
 ### Bytes
 Bytes are like strings. b'string'. To change bytes to string
 ```py
