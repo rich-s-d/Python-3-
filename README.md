@@ -259,6 +259,51 @@ list2 = reversed(list) # Creates a list_reverseiterator object.
 list(list2) # Create list and return [8,6,2,1]
 ```
 ### Dictionaries
+Made of keys (immutable) and values (may be mutable, lists for example).
+```py 
+dict = {'Point': (23.4, 75.3), 'Linestring':(24.5, 24.7, 32.5)}
+dict['Point'] # Returns (23.4, 75.3)
+```
+#### dict()
+dict() can turn a list of tuples into a dictionary, or simply by passing with key=value
+```py
+list = [(23, 45), (2, 50), (46, 32)]
+dict = dict(list)
+
+phonectic = dict('a'='alfa', 'b'='bravo', 'c'='charlie')
+```
+#### Copying, with either .copy() or dict() 
+See list above. As with list, copying is 'shallow', ie., only copies the references and the values will be updated in both unless rebound.
+
+#### .update() , ie., add new entries or update. Add with augmented operator +=.
+Use same key to override existing value.
+```py
+dict1 = {'Point': (23.4, 75.3), 'Linestring':(24.5, 24.7, 32.5)}
+dict1.update({'Point':(10.1, 13.2)}) # Returns dict with updated values for 'Point'
+
+dict1['Linestring'] += (45.8, 99.9, 100.1) # Adds these three floating point numbers to the three there.
+dict1['Polygon'] = (45.8, 99.9, 100.1, 45.8) # Adds new entry to dictionary.
+```
+#### .keys() and .values()
+Iterates over one or the other in a loop.
+#### .items()
+Iterates over keys and values in tandom. Yields a key, value tuple of each iteration.
+```py
+for key, value in dict.items():
+    print(f'{key} => {value}')
+ ```
+ #### in, not in
+ Work on the keys.
+ ```py
+ dict = {'Point': (23.4, 75.3), 'Linestring':(24.5, 24.7, 32.5)}
+ 'Point' not in dict # Returns False.
+ ```
+ #### del used to delete on keys
+ ```py
+ del dict['Point']
+ ```
+ #### from pprint import pprint as pp
+ Gives an easier readability.
 
 ## Pandas and Geopandas
 ### Functions
