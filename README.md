@@ -305,6 +305,29 @@ for key, value in dict.items():
  #### from pprint import pprint as pp
  Gives an easier readability.
 
+### Sets
+1. Wheras an emply dictionary can be intaniated using emply curly braces, a set must use the command set. new_dic = {}. new_set = set().
+2. Order is arbitrary is sets. This goes for iterating through it too. 
+3. To add a single value to a set use the add() method. Adding an element that does not exist does nothing, neither will it produce an error.
+4. update() can be used to add an iterable series of values.
+5. in and not in work on sets. 
+6. discard() or remove(), remove() will cause a key error if not present, discard() will not and just continue.
+7. copy(), like other iterable series, will make a soft copy.
+```py
+new_set = {23, 12, 56, 24}
+new_set = set([34, 12, 2, 2, 2, 56, 3]) # any iterable series can be sent to the set constuctor and duplicates are discarded! Handy way to remove ducplicates.
+34 in new_set # Returns True
+new_set.add(99)
+new_set.update([34, 65, 21])
+new_set.discard(65)
+```
+#### Set Algebra
+```py
+blue_eyes.union(blond_hair) # Returns all values that are in both sets.
+
+```
+
+
 ## Pandas and Geopandas
 ### Functions
 ```py
