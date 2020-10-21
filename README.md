@@ -216,7 +216,7 @@ a_list[start:stop]
 list = [1,2,3,5]
 print(list[2:]) # Returns [3,5]
 # The below are soft copies, in that they create a copy of the references but the items mutated, for example with an append(). Rebinding, ie replacing the list will stop this. 
-list2 = list[:] # Where list is list2 is False but where list == list2, BUT, items are updated in both.
+list2 = list[:] # Full slice. Where list is list2 is False but where list == list2, BUT, items are updated in both.
 list2 = list.copy() # A more readable way to copy.
 list2 = list(list) # Best way to copy, as any iterable series as a source can be passed, not just lists.
 # See below:
@@ -323,7 +323,22 @@ new_set.discard(65)
 ```
 #### Set Algebra
 ```py
-blue_eyes.union(blond_hair) # Returns all values that are in both sets.
+blue_eyes.union(blond_hair) # Returns all values that are in either and both sets.
+blue_eyes.intersection(blond_hair) # Returns all values that are the same in both sets.
+blond_hair.difference(blue_eyes) # Returns those with blond hair without blue eyes. 
+blond_hair.semmetric_difference(blue_eyes) # Returns all values that exclusive in each set, ie., only blue eyes or blond hair and not both.
+blond_hair.isubset(blue_eyes) # Do all those with blond hair have blue eyes?
+.issuperset()
+.isdisjoing()
+```
+### Protocols
+A set of operations that a type must support to implement the protocol. In C# these need to be defined as interfaces or base classes but not in Python.
+## Exceptions
+1.Avoid type errors, they will occur of their own.
+2. Python uses EAFP (easier to ask forgiveness than to ask permission). Try and accept to handle errors rather than trying to check the for errors before handling.
+3. EAFP is enabled by exceptions. Without exceptions, error flow is interspersed in program flow
+```py
+from exceptional import convert
 
 ```
 
