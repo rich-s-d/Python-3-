@@ -341,6 +341,23 @@ A set of operations that a type must support to implement the protocol. In C# th
 from exceptional import convert
 
 ```
+## Zero to Mastery Course
+### Basics
+##### Walrus :=
+Assigns values to expressions. New in Python 3.8.
+```py
+x = "hellooooooooooo"
+if (n := len(x)) > 10:
+    print(f"The length of x is {n}")
+```
+### OOP 
+1. Encapsulation
+2. 
+3.
+4.
+### Functional Programming
+Pure Functions.
+
 
 
 ## Pandas and Geopandas
