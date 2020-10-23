@@ -356,8 +356,8 @@ if (n := len(x)) > 10:
 3.
 4.
 ### Functional Programming
-Pure Functions.
-
+#### Pure Functions.
+1.
 
 
 ## Pandas and Geopandas
