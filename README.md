@@ -384,14 +384,105 @@ if (n := len(x)) > 10:
     print(f"The length of x is {n}")
 ```
 ### OOP 
-1. Encapsulation
-2. Abstraction
+1. Encapsulation, containing info in a class.
+2. Abstraction, hides the details away, privacy or not _name.
 3. Inheritance
 4. Polymorphism
-#### Objects
+```py
+class NameOfClass:
+    class_attribute = 'value' 
+    def __init__(self, param1, param2):
+        self.param1 = param1 #attributes of the objects
+        self.param2 = param2
 
-#### Functions
-If a function does not returns anything it returns None.
+    def method(self):
+        #code
+        #eg, print(f'my name is {self.name}')
+        #return 'done' # If a function does not return anything it returns None
+    
+    @classmethod
+    def cls_method(cls, param1, param2):
+        #code
+        #eg, return cls('Teddy', num1 + num2)
+    
+    @staticmethod
+    def stc_method(param1, param2):
+        #code
+        #eg, return num1 + num2
+```
+##### Inheritance
+The idea of a parent (User) and children classes (or sub-classes or derived classes) (Wizard, Archer, etc.). isinstance()
+```py
+#users can be wizards, archers, etc, but they must be signed in first.
+
+class User():
+    def sign_in(self): # No __init__ method because we dont need to assign attributes to the class.
+        print('logged in')
+
+class Book():
+    def new_book(self):
+        print(f'a class can inherit two classes using commas!')
+
+class Wizard(User, Book):
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+    
+    def attack(self):
+        print(f'attacking with a power of {self.power}')
+
+class Archer(User):
+    def __init__(self, name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
+    
+    def attack(self):
+        print(f'attacking with arrows: arrows left- {self.num_arrows}')
+
+wizard1 = Wizard('Merlin', 60)
+print(isinstance(wizard1, Book))
+wizard1.new_book()
+```
+##### Polymorphism
+```py
+#users can be wizards, archers, etc, but they must be signed in first.
+
+class User():
+    def sign_in(self): # No __init__ method because we dont need to assign attributes to the class.
+        print('logged in')
+    
+    def attack(self):
+        print('do nothing')
+
+class Book():
+    def new_book(self):
+        print(f'a class can inherit two classes using commas!')
+
+class Wizard(User, Book):
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+    
+    def attack(self):
+        User.attack(self) # Polymorphism
+        print(f'attacking with a power of {self.power}')
+
+class Archer(User):
+    def __init__(self, name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
+    
+    def attack(self):
+        print(f'attacking with arrows: arrows left- {self.num_arrows}')
+
+wizard1 = Wizard('Merlin', 60)
+archer1 = Archer('Robin', 30)
+
+def player_attack(char):
+    char.attack() # Polymorphism. The object determines which attack method.
+
+print(wizard1.attack())
+```
 
 ### Functional Programming
 #### Pure Functions.
