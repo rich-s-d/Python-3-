@@ -483,6 +483,62 @@ def player_attack(char):
 
 print(wizard1.attack())
 ```
+#### super()
+super() requires less code (see below where super() replaces User and thereby removes the need for self) and refers to the base class (User).
+```py
+super().__init__(param)
+#User.__init__(self, param)
+```
+#### dir() allows introspection at runtime, ie., see what is available to an object.
+```py
+print(dir(wizard1))
+```
+#### dunder magic methods __magicmethods__
+__str__ or str() are the same. You can customise or modify dunder methods if desired. Usually you wouldn't want to overwrite them but you can if you will.
+```py
+def __str__(self)
+    return self.param # Now __str__ or str() will return that param instead of the default.
+    
+class Toy():
+    def __init__(self, colour, age):
+        self.colour = colour
+        self.age = age
+        self.my_dict = {
+            'name':'Yoyo',
+            'has_pets': False
+        }
+
+    def __call__(self): # __call__ allows you to call an object, action_figure in this case. 
+        print('you called??')
+    
+    def __getitem__(self, i):
+        return self.my_dict[i] # my_dict is a Toy class attribute.
+
+action_figure = Toy('red', 0)
+
+print(action_figure()) # Here we have called the object, which will print 'you called??'
+print(action_figure['name']) # __getitem__ 
+```
+#### Extending List (essentially modifying the inbuilt classes).
+How to return a new list class called a super list that always returns length 1000?
+```py
+class SuperList(list):
+    def __len__(self):
+        return 1000
+```
+#### Multiple Inheritance
+```py
+class HybridBorg(Wizard, Archer): Using two base classes!
+    def __init__(self, name, power, num_arrows):
+        Wizard.__init__(self, name, power) # This is how to access the attributes and methods in those classes.
+        Archer.__init__(self, name, num_arrows) # This is how to access the attributes and methods in those classes.
+``` 
+#### Method Resolution Order (MRO)
+What is first in line if calling multipe base classes?
+```py
+print(object.mro())
+print(object.__mro__)
+```
 
 ### Functional Programming
 #### Pure Functions.
