@@ -541,9 +541,27 @@ print(object.__mro__)
 ```
 
 ### Functional Programming
-#### Pure Functions.
-1.
+#### map() preforms a function of an iterable
+Map could for example be used to change all the names in a list to capital letters quickly.
+```py
+my_list = [1,2,3]
+def multipybytwo(item):
+    return item*2
+print(list(map(multipybytwo, my_list))) # Pure funciton because it does not afffect the outside world, ie., my_list is not altered, rather a new list was made.
+```
+#### filter() essentially filter the results that map would return
+```py
+def checkodd(item):
+    return item % 2 != 0
 
+print(list(filter(checkodd, my_list)))
+```
+#### zip() puts iterables together
+```py
+my_list = [1,2,3]
+your_list = [10,20,30]
+print(list(zip(my_list, your_list))) # Could be any combination of iterables.
+```
 
 ## Pandas and Geopandas
 ### Functions
