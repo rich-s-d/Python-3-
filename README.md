@@ -3,6 +3,9 @@
 * Table of contents
 [[_TOC_]]
 
+## Fantastic Resources:
+https://elitedatascience.com/python-cheat-sheet
+
 ## Control Flow
 ### While Loops
 ```py
@@ -562,7 +565,28 @@ my_list = [1,2,3]
 your_list = [10,20,30]
 print(list(zip(my_list, your_list))) # Could be any combination of iterables.
 ```
+### Maching Learning and Data Science
+#### Cleaning Data
+```py
+var = df['column'].replace('[\$,]', '', regex=True).apply(value_to_float) # regex101.com
 
+def value_to_float(x):
+    if type(x) == float or type(x) == int:
+        return x
+    if 'K' in x:
+        if len(x) > 1:
+            return float(x.replace('K', '')) * 1000
+        return 1000.0
+    if 'M' in x:
+        if len(x) > 1:
+            return float(x.replace('M', '')) * 1000000
+        return 1000000.0
+    if 'B' in x:
+        return float(x.replace('B', '')) * 1000000000
+    return 0.0
+
+    df."Insert data series column" = df."Insert data series column" .apply(value_to_float)
+```
 ## Pandas and Geopandas
 ### Functions
 ```py
