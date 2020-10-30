@@ -544,6 +544,39 @@ print(object.__mro__)
 ```
 
 ### Functional Programming
+#### map, filter, zip, reduce
+```py
+from functools import reduce
+
+#1 Capitalize all of the pet names and print the list
+my_pets = ['sisi', 'bibi', 'titi', 'carla']
+
+def capitalise(string):
+  return string.upper()
+
+print(list(map(capitalise, my_pets)))
+
+#2 Zip the 2 lists into a list of tuples, but sort the numbers from lowest to highest.
+my_strings = ['a', 'b', 'c', 'd', 'e']
+my_numbers = [5,4,3,2,1]
+
+print(list(zip(sorted(my_numbers), my_strings)))
+
+#3 Filter the scores that pass over 50%
+scores = [73, 20, 65, 19, 76, 100, 88]
+
+def passgrade(item):
+  return item > 49 
+
+print(list(filter(passgrade, scores)))
+
+#4 Combine all of the numbers that are in a list on this file using reduce (my_numbers and scores). What is the total?
+
+def accumulater(acc, item):
+  return acc + item
+
+print(reduce(accumulater, (my_numbers + list(filter(passgrade, scores)))))
+```
 #### map() preforms a function of an iterable
 Map could for example be used to change all the names in a list to capital letters quickly.
 ```py
@@ -565,6 +598,17 @@ my_list = [1,2,3]
 your_list = [10,20,30]
 print(list(zip(my_list, your_list))) # Could be any combination of iterables.
 ```
+#### reduce
+```py
+from functools import reduce
+def accumulator(acc, item):
+    print(acc, item)
+    return acc + item
+
+print(reduce(accumulator, my_list, 0)) # Initial value set to zero (acc in accumulator definition).
+```
+
+
 ### Maching Learning and Data Science
 #### Cleaning Data
 ```py
