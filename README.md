@@ -607,7 +607,10 @@ def accumulator(acc, item):
 
 print(reduce(accumulator, my_list, 0)) # Initial value set to zero (acc in accumulator definition).
 ```
+#### lambda (annonymous one off function, lambda param: action(param)
+```py
 
+```
 
 ### Maching Learning and Data Science
 #### Cleaning Data
