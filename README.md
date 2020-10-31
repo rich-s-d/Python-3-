@@ -608,8 +608,44 @@ def accumulator(acc, item):
 print(reduce(accumulator, my_list, 0)) # Initial value set to zero (acc in accumulator definition).
 ```
 #### lambda (annonymous one off function, lambda param: action(param)
+Called anonymous functions in some languages.
 ```py
+double = lambda x: x*2
+print(double(1)) # Returns 2
 
+my_list = [1,2,3]
+print(list(map(lambda item: item*2, my_list)))
+
+print(reduce(lambda acc, item: acc+item, my_list, 10)) # Returns 16.
+
+# A common way to adjust sorting on iterables.
+a = [(0,2), (4,3), (9,9), (10, -1)]
+a.sort(key=lambda x: x[1]) # x is the tuple and the key will be in the second item.
+print(a)
+```
+#### list comprehensions (or set or data comprehensions)
+Quick ways to generate sets, etc. 
+my_list = [param for param in iterable]
+```py
+my_list = [param for param in iterable]
+my_list = [char for char in 'hello']
+
+my_list2 = [num for num in range(0, 100)]
+my_list2 = [num for num in filter(lambda item: item % 2 !=0, range(0, 100))] # This is too much coding compared with the example below.
+my_list6 = [num for num in range(0, 100) if num % 2 == 0] # Which returns the same as my_list2 above.
+my_list3 = [num for num in filter(lambda item: item not in my_list, range(0, 100))]
+my_list4 = [num*2 for num in range(0, 100)]
+```
+#### list and dictionary comprehensions
+Sets are the same as lists, just use {}.
+```py
+simple_dict = {
+    'a': 1,
+    'b': 2
+}
+
+my_dict = {key:value**2 for key, value in simple_dict.items()}
+print(my_dict)
 ```
 
 ### Maching Learning and Data Science
