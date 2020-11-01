@@ -643,11 +643,73 @@ simple_dict = {
     'a': 1,
     'b': 2
 }
-
-my_dict = {key:value**2 for key, value in simple_dict.items()}
+my_dict = {k:v**2 for k, v in simple_dict.items() if v%2 ==0}
 print(my_dict)
-```
 
+my_dict1 = {num:num*2 for num in [1,2,3]} # Returns {1: 2, 2: 4, 3: 6}
+
+some_list = ['a', 'b', 'b', 'h', 'f', 'n', 'n']
+duplicates = list(set([x for x in some_list if some_list.count(x) > 1]))
+print(duplicates)
+```
+### Decorators (known as a decorator pattern).
+1. Decorators give extra functionality to functions.
+2. A hirger order function (HOR) accepts another function as a parameter or returns another function.(ie, map(), reduce(), filter()!
+```py
+def my_decorator(func):
+    def wrap_func(*args, **kwargs): # *args means all arguments (parametres) and **kwargs means all keyword arguments.
+        print('********')
+        func(*args, **kwargs)
+        print('********')
+    return wrap_func
+
+@my_decorator
+def hello(greeting, emoji = ':)'):
+    print(greeting, emoji)
+
+hello('hiiii')
+```
+Decorators can help with measuring performance!:
+```py
+from time import time
+
+def performance(fn):
+    def wrapper(*args, **kwargs):
+        t1 = time()
+        result = fn(*args, **kwargs)
+        t2 = time()
+        print(f'took {t2-t1} s')
+        return result
+    return wrapper
+
+
+@performance
+def long_time():
+    for i in range(1000000):
+        i * 5
+
+long_time()
+```
+Or for authentication:
+```py
+# Create an @authenticated decorator that only allows the function to run is user1 has 'valid' set to True:
+user1 = {
+    'name': 'Sorna',
+    'valid': True
+}
+
+def authenticated(fn):
+  def wrapper(*args, **kwargs):
+    if args[0]['valid']:
+        return fn(*args, **kwargs)
+  return wrapper
+
+@authenticated
+def message_friends(user):
+    print('message has been sent')
+
+message_friends(user1)
+```
 ### Maching Learning and Data Science
 #### Cleaning Data
 ```py
