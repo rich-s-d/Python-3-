@@ -710,6 +710,110 @@ def message_friends(user):
 
 message_friends(user1)
 ```
+### Error Handling (Exceptions)
+try and except blocks are used to handle exceptions
+```py
+while True:
+    try:
+        age = int(input('what is your age?'))
+        10/age
+
+    except ValueError:
+        print('please enter a number')
+        continue
+    except ZeroDivisionError:
+        print('please enter an age above zero')
+    else:
+        print('thanks')
+        break
+    finally: # Finally will run at the end of each loop no matter what, exception or no exception.
+        print('ok I am finally done')
+    print('this will never print because we have break under else')
+```
+Combining exceptions:
+```py
+def sum(num1, num2):
+    try:
+        return num1 / num2
+    except (TypeError, ZeroDivisionError) as err:
+        #print(f'please enter numbers: error as follows - {err}')
+        print(err)
+```
+Raising an exception is also possible:
+```py
+while True:
+    try:
+        age = int(input('what is your age?'))
+        if age < 18:
+            raise Exception('must be above 18')
+    #except etc etc code.
+```
+### Generators
+1. Generate a sequence of values over time. 
+2. Range() is a generator. 
+3. Generators are not stored in memory, rather they give you one item at a time to work with.
+4. Generators are iterables, ie. you can loop over them. But iterables like list etc. are not generators.
+5. Use less resources because they are MUCH faster than iterating over an iterable like a list.
+```py
+def generator_function(num):
+    for i in range(num):
+        yield i * 2 # Yield will return the number one at a time and this can be used with next().
+        
+g = generator_function(100)
+print(next(g)) # Would return 0 (0*2). If you exceed the next yield you recieve a stop iteration error.
+```
+Performance of generators:
+```py
+@performance
+def long_time():
+    print('1')
+    for i in range(1000000):
+        i*5
+
+@performance
+def long_time2():
+    print('2')
+    for i in list(range(1000000)):
+        i*5
+```
+Under the hood of a for loop: iter()
+```py
+# The below is essentially under the hood in a for loop.
+def special_forloop(iterable):
+    iterator = iter(iterable) # Note the iter() method, which turns each number into an iterable object.
+    while True:
+        try:
+            print(iterator)
+            print(next(iterator)*2)
+        except StopIteration:
+            break
+
+special_forloop([1,2,3])
+```
+Under the hood of range:
+```py
+#The class MyGen mimics what range does under the hood.
+class MyGen():
+    current = 0
+    def __init__(self, first, last):
+        self.first = first
+        self.last = last
+
+    def __iter__(self): # __iter__ built into python
+        return self
+
+    def __next__(self): # __next__ built into python
+        if MyGen.current < self.last:
+            num = MyGen.current
+            MyGen.current +=1
+            return num
+        raise StopIteration
+
+gen = MyGen(0, 100)
+for i in gen:
+    print(i)
+```
+
 ### Maching Learning and Data Science
 #### Cleaning Data
 ```py
