@@ -830,6 +830,102 @@ for x in fib(1000):
 ### Modules
 1.__pycache__ is created when we import modules and speeds things up. We dont touch this.
 2. A .py file is a module, but a package is a level up, its a folder.
+3. if __name__ == __main__: means, if this is the main file, run it (as opposed to modules that are just to be imported).
+4. Python has a built in package index!
+5. import sys, sys.argv[1] etc allows you to provide arguments from the terminal.
+6. Virtual environments allow projects to have versioned libraries, which is important due to dependencies. 
+7. Specialised data types are built into python. Eg. From collections import Counter. or datetime or array.
+8. Arrays use less memory than lists. 
+```py
+from random import shuffle
+my_cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+random.shuffle(my_cards)
+print(my_cards[0:6])
+
+import sys
+first = sys.argv[1]
+last = sys.argv[2]
+print(f'hiiii! {first}{last}')
+# In the terminal you would enter: python module.py arg1 arg2
+
+from collections import Counter, defaultdict, OrderedDict
+# defaultdict is a default dict from Python 3.6.
+
+#li = [num for num in range(1, 8)]
+li = [1, 2, 3, 4, 5, 6, 7, 7]
+sentence = 'blah blah blah thinking about python'
+print(Counter(li)) # Retruns a dict where value is the count of list contents.
+print(Counter(sentence))
+
+dict = defaultdict(lambda: 'key does not exist', {'a': 1, 'b': 2}) # if int was used it would return 0, as int alone = 0
+print(dict['c']) # Returns 'key does not exist' instead of key error.
+
+d = OrderedDict()
+d['a'] = 1
+d['b'] = 2
+
+d2 = OrderedDict()
+d2['a'] = 2
+d2['b'] = 1
+
+print(d2==d) # Returns False, but normal dictionaries would be True in Python older than 3.6!
+print(d2 is d) # Returns False of course. 
+
+import datetime
+
+print(datetime.time(5,45,2))
+print(datetime.date.today())
+
+from array import array
+
+arr = array('i', [1,2,3]) # i stands for signed integer. https://docs.python.org/3/library/array.html#module-array
+print(arr[0]) # This uses much less memory!
+```
+### How to debug code
+pdb The python debugger. How to debug?
+1. linting, pylint etc, highlighting on text to show mistakes.
+2. use IDEs like pycharm
+3. learn to read errors
+4. pdb, the python debugger.
+```py
+import pdb
+
+def add(num1, num2):
+    pdb.set_trace() # Common arguments are step, arg, list, help, help list etc. You can change variable values etc in the pdb to assist with debugging!
+    t = 4*5
+    return num1 + num2
+
+add(4, 'SDfasg')
+```
+### Files I/O, input and output
+1. r+ means read and write, a is append, w is write. w will write over.
+2. write will create a new file if it does not exist.
+```py
+my_file = open(r'test.txt')
+
+# seek is used to return the curser to the start of the file, otherwise the next two print statements would return blank.
+my_file.seek(0)  # 0 is the first curser index in the file
+print(my_file.read())
+my_file.seek(6)
+print(my_file.read())
+my_file.seek(0)
+
+
+print(my_file.readline()) # returns one line
+print(my_file.readlines()) # returns all lines
+
+my_file.close() # you must close the file!
+
+with open('sad.txt', mode='w') as my_file:
+    text = my_file.write(':(')
+    print(text)
+```
+#### File Paths
+```py
+from pathlib import Path
+ykr_grid_file_path = Path("MetropAccess_YKR_grid\MetropAccess_YKR_grid_EurefFIN.shp")
+```
+
 
 ### Maching Learning and Data Science
 #### Cleaning Data
