@@ -813,6 +813,23 @@ gen = MyGen(0, 100)
 for i in gen:
     print(i)
 ```
+Fibonacci Numbers
+```py
+def fib(number):
+    a = 0
+    b = 1
+    for i in range(number):
+        yield a 
+        temp = a
+        a = b
+        b = b + temp
+
+for x in fib(1000):
+    print(x)
+```
+### Modules
+1.__pycache__ is created when we import modules and speeds things up. We dont touch this.
+2. A .py file is a module, but a package is a level up, its a folder.
 
 ### Maching Learning and Data Science
 #### Cleaning Data
