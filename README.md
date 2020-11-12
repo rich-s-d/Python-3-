@@ -898,8 +898,10 @@ def add(num1, num2):
 add(4, 'SDfasg')
 ```
 ### Files I/O, input and output
-1. r+ means read and write, a is append, w is write. w will write over.
+1. r+ means read and write, r to read, a is append, w is write. w will write over.
 2. write will create a new file if it does not exist.
+3. ./ at the beginning of the file path means current folder.
+4. ../ at the beginning means go back one directory.
 ```py
 my_file = open(r'test.txt')
 
@@ -925,7 +927,59 @@ with open('sad.txt', mode='w') as my_file:
 from pathlib import Path
 ykr_grid_file_path = Path("MetropAccess_YKR_grid\MetropAccess_YKR_grid_EurefFIN.shp")
 ```
+#### Files I/O errors, using try and except.
+```py
+try:
+    with open('sad.txt', mode='w') as my_file:
+        print('write something and press enter twice')
+        text = my_file.write(input())
+        print(f'{text} characters were added to {my_file}')
+except FileNotFoundError as err:
+    print('file does not exist')
+    raise err
+except IOError as err:
+    print('IO error')
+    raise err
+```
+### Regular Expressions
+1. Search python regex for websites with sets and keys for building patterns.
+2. use this to build: https://regex101.com
+3. Regex is great for validation!
+```py
+#email validation
+import re
 
+pattern = re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)") #email validation copied from google and checked here: https://regex101.com/
+
+string = 'b@b.com'
+
+#print('search' in string)
+
+a = pattern.search(string)
+b = pattern.findall(string)
+c = pattern.fullmatch(string) # true if completely identical
+d = pattern.match(string)
+
+print(a.span()) # shows where in string the search occurs
+print(a.start()) # shows where it starts 
+print(a.group()) # returns matches
+print(a.group(1)) # only prints results from group one (([a-zA-Z]))
+
+#password validation 
+import re
+
+pattern = re.compile(r"[a-zA-Z0-9#%$@]{8,}\d")
+
+password = 'gegwedss$#%5'
+
+a = pattern.fullmatch(password)
+
+print(a)
+
+# conditions were min 8 charactors
+# can contain #%$@
+# must end with a number
+```
 
 ### Maching Learning and Data Science
 #### Cleaning Data
