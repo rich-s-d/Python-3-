@@ -980,6 +980,20 @@ print(a)
 # can contain #%$@
 # must end with a number
 ```
+### Git Hub command line commands
+1. git clone pastelinktorepohere
+2. git status, git add *, git commit -m "message", git push
+3. git pull
+4. git branch # see branch directory
+5. git branch littlefeature # create a branch called littlefeature
+6. git checkout littlefeature # switches to branch littlefeature
+
+## Web Development in Python using Flask
+1. Flask is a microframework. Django is a framework, a big kitchen to enter where you can start cooking up your website.
+
+2. python -m venv venv # create a virtual env in the project directory.
+3. venv\Scripts\activate # activate the env.
+
 
 ### Maching Learning and Data Science
 #### Cleaning Data
