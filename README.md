@@ -996,6 +996,8 @@ print(a)
 4. C:\path\to\app>set FLASK_APP=server.py, then python -m flask run
 5. SET FLASK_DEBUG=1, then python -m flask run # development mode!
 
+6.C:\Users\Shane Rich\webserver>pip freeze > requirements.txt # creates a list of requirements for this app to be run on other machines! This is why we use environments!
+
 
 ### Maching Learning and Data Science
 #### Cleaning Data
