@@ -993,6 +993,8 @@ print(a)
 
 2. python -m venv venv # create a virtual env in the project directory.
 3. venv\Scripts\activate # activate the env.
+4. C:\path\to\app>set FLASK_APP=server.py, then python -m flask run
+5. SET FLASK_DEBUG=1, then python -m flask run # development mode!
 
 
 ### Maching Learning and Data Science
