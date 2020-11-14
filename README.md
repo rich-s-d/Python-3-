@@ -767,7 +767,7 @@ Performance of generators:
 @performance
 def long_time():
     print('1')
-    for i in range(1000000):
+    for i in range(1000000): 
         i*5
 
 @performance
