@@ -1075,5 +1075,5 @@ webbrowser.open(filename.absolute().as_uri())
 from pathlib import Path
 
 file_name = Path(file_path).name  # myfile.png
-file_stem = Path(file_path).stem  # myfile
+file_stem = Path(file_path).stem  # myfile 
 ```
