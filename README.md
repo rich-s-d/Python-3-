@@ -1006,7 +1006,11 @@ print(a)
 
 6.C:\Users\Shane Rich\webserver>pip freeze > requirements.txt # creates a list of requirements for this app to be run on other machines! This is why we use environments!
 
-
+### Testing, Unit Testing
+1. Every main.py file has its own test.py file.
+2. Test.py is only for development, customers never see this.
+3. Standard library called unittest
+4. Break the function in the test, trick it into causing an error, then improve the function  by catching it and asserting it. 
 
 
 ### Maching Learning and Data Science
