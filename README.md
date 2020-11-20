@@ -988,8 +988,8 @@ print(a)
 5. git branch littlefeature # create a branch called littlefeature
 6. git checkout littlefeature # switches to branch littlefeature
 
-#### To connect repo to exisiting directory
-7. git init -b main
+#### To connect repo to exisiting directory, git 2.27
+7. git init, then, git checkout -b main
 8. git add *
 9. git commit -m "First commit"
 10. git remote add origin remote repository URL
