@@ -996,6 +996,14 @@ print(a)
 11. git remote -v
 12. git push origin main
 
+#### Git ignore
+1. Before first commit: Make .gitignore in notepad, 1) Open Notepad, 2) Add the contents of your gitignore file. 3) Click "Save as" and select "all files".4) Save as .gitignore.
+2. After first commit the particular files or folders will need to be untracked using git rm --cached FILENAME
+3. use this link for more details: https://www.pluralsight.com/guides/how-to-use-gitignore-file
+
+#### Next , git remote add, git push origin master.
+
+
 ## Web Development in Python using Flask
 1. Flask is a microframework. Django is a framework, a big kitchen to enter where you can start cooking up your website.
 
