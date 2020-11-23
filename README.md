@@ -3,6 +3,9 @@
 * Table of contents
 [[_TOC_]]
 
+## Conda
+1. create from yml. conda env create -f environment.yml
+
 ## Fantastic Resources:
 https://elitedatascience.com/python-cheat-sheet
 
