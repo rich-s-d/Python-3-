@@ -1009,8 +1009,8 @@ print(a)
 
 2. python -m venv venv # create a virtual env in the project directory.
 3. venv\Scripts\activate # activate the env.
-4. C:\path\to\app>set FLASK_APP=server.py, then python -m flask run # to use, but below for development
-5. SET FLASK_DEBUG=1, then python -m flask run # development mode!
+4. C:\path\to\app>set FLASK_APP=server.py.
+5. Development mode SET FLASK_DEBUG=1, then python -m flask run. If not development mode then just python -m flask run.
 
 6.C:\Users\Shane Rich\webserver>pip freeze > requirements.txt # creates a list of requirements for this app to be run on other machines! This is why we use environments!
 
