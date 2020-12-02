@@ -1026,7 +1026,8 @@ print(a)
 6. python -m unittest -v (v stands for verbose).
 7. Remember to review my tutorial test.py file in the python_tutorial repo.
 8. doc string like comments can be added to tests for use with python -m unittest -v
-9. 
+9. setUp() is a default method in unittest that will run before every test. use it to set up variables for example.
+10. tearDown() is another default method executed after every test. Often used when interacting with databases.
 
 
 ### Maching Learning and Data Science
