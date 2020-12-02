@@ -1018,10 +1018,15 @@ print(a)
 6.C:\Users\Shane Rich\webserver>pip freeze > requirements.txt # creates a list of requirements for this app to be run on other machines! This is why we use environments!
 
 ### Testing, Unit Testing
-1. Every main.py file has its own test.py file.
-2. Test.py is only for development, customers never see this.
-3. Standard library called unittest
+1. Every main.py file should have its own test.py file.
+2. Test.py is only for development, not for production ie., customers never see this.
+3. Standard library is called unittest.
 4. Break the function in the test, trick it into causing an error, then improve the function  by catching it and asserting it. 
+5. REPL> python -m unittest (will run all test files due to unittest.main() at bottom of test files). Not necessary to use python test.py unless wanting to run an individual test.py file.
+6. python -m unittest -v (v stands for verbose).
+7. Remember to review my tutorial test.py file in the python_tutorial repo.
+8. doc string like comments can be added to tests for use with python -m unittest -v
+9. 
 
 
 ### Maching Learning and Data Science
