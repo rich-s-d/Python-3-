@@ -991,6 +991,8 @@ print(a)
 5. git branch littlefeature # create a branch called littlefeature
 6. git checkout littlefeature # switches to branch littlefeature
 
+7. git push origin <your_branch_name> --force
+
 #### To connect repo to exisiting directory, git 2.27
 7. git init, then, git checkout -b main
 8. git add *
