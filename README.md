@@ -8,6 +8,7 @@
 
 ## Fantastic Resources:
 https://elitedatascience.com/python-cheat-sheet
+https://regex101.com
 
 ## Control Flow
 ### While Loops
