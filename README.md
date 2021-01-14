@@ -9,6 +9,7 @@
 ## Fantastic Resources:
 https://elitedatascience.com/python-cheat-sheet
 https://regex101.com
+https://hector.dev/2020/12/29/validating-data-in-python-with-cerberus.html
 
 ## Control Flow
 ### While Loops
