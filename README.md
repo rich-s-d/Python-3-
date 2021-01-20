@@ -4,7 +4,7 @@
 [[_TOC_]]
 
 ## Conda
-1. create from yml. conda env create -f environment.yml
+1. create from yml: conda env create -f environment.yml
 
 ## Fantastic Resources:
 https://elitedatascience.com/python-cheat-sheet
