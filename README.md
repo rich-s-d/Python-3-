@@ -11,6 +11,7 @@ https://elitedatascience.com/python-cheat-sheet
 https://regex101.com
 https://hector.dev/2020/12/29/validating-data-in-python-with-cerberus.html
 http://blog.cleverelephant.ca/writings
+http://www.sqlrun.com
 
 ## Control Flow
 ### While Loops
