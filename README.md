@@ -987,6 +987,10 @@ print(a)
 # can contain #%$@
 # must end with a number
 ```
+Snippets:
+```
+PATTERN = \bcluster.*\b
+```
 ### Git Hub command line commands
 1. git clone pastelinktorepohere
 2. git status, git add *, git commit -m "message", git push
