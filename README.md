@@ -13,6 +13,27 @@ https://hector.dev/2020/12/29/validating-data-in-python-with-cerberus.html
 http://blog.cleverelephant.ca/writings
 http://www.sqlrun.com
 
+python debugger: https://www.youtube.com/watch?v=5AYIe-3cD-s
+
+## Python Debugger
+From python >=3.7 as easy as:
+```py
+breakpoint() 
+pip install ipdb
+export PYTHONBREAKPOINT=ipdb.set_trace
+export PYTHONBREAKPOINT=0 #skip all breakpoints
+# commands to be productive (see also cheatsheet here: https://www.nnja.io/post/2020/pycon2020-goodbye-print-hello-debugger/)
+n # next
+c # continue to next breakpoint
+s # step into
+l # list, list code around breakpoint
+ll # long list
+h # help
+a # args (if you have stepped into a method for example)
+# if something is defined, simply type its name, print(foo) is not required.
+foo
+```
+
 ## Control Flow
 ### While Loops
 ```py
