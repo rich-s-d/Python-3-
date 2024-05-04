@@ -3,6 +3,15 @@
 * Table of contents
 [[_TOC_]]
 
+## Heap Data Structure (ordered structure)
+# Find the k-th largest element in an array. Example array is [4, 1, 9, 12, 6]; k=2; return 9
+import heapq
+def fetch_k_biggest_num(array, k):
+    heapq.heapify(array)
+    for _ in range(k-1):
+        heapq.heappop(array)
+    return heapq.heappop(array)
+
 ## Conda
 1. create from yml: conda env create -f environment.yml
 
